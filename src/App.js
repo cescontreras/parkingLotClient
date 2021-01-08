@@ -13,17 +13,17 @@ function App() {
 	const [msg, setMsg] = useState("");
 
 	const getParkingLot = async () => {
-		const { data } = await axios.get("http://localhost:3001/parkingspace");
+		const { data } = await axios.get("https://parkinglotserver.herokuapp.com/parkingspace");
 		setParkingLot(data.spaces);
 	};
 
 	const getQueue = async () => {
-		const { data } = await axios.get("http://localhost:3001/vehicle/queue");
+		const { data } = await axios.get("https://parkinglotserver.herokuapp.com/vehicle/queue");
 		setQueue(data);
 	};
 
 	const postVehicle = async (vehicle) => {
-		const { data } = await axios.post("http://localhost:3001/vehicle", vehicle);
+		const { data } = await axios.post("https://parkinglotserver.herokuapp.com/vehicle", vehicle);
 		setShow(true);
 		setMsg(data.msg);
 		getQueue();
@@ -31,7 +31,7 @@ function App() {
 	};
 
 	const removeVehicle = async (id) => {
-		const { data } = await axios.delete(`http://localhost:3001/vehicle/${id}`);
+		const { data } = await axios.delete(`https://parkinglotserver.herokuapp.com/vehicle/${id}`);
 		setShow(true);
 		setMsg(data.msg);
 		if (queue[0]) {

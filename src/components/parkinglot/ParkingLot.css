@@ -1,0 +1,21 @@
+.parkinglot {
+  width: 70%;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#remove {
+  background: rgb(242, 142, 142);
+}
+
+#remove:hover{
+  cursor: pointer;
+  color: white;
+}
+
+.toast {
+  position: absolute;
+  margin: 20px;
+}
